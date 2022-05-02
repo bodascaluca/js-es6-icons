@@ -130,21 +130,16 @@ const list =
 
 
 
-/*
-const text = list.map((element)=>{
-    let message;
-    message.innerHTML +=`${element.family} ${element.prefix} ${element.type}`;
-    return message;
-});
-*/
-
 const main = document.querySelector(".main");
 list.forEach((element) => {
     const casella = document.createElement("div");
     casella.classList.add("box");
     // manca i con le classi dell'icona
+    const i = document.createElement("i");
+    i.classList.add(element.family, element.prefix+element.name);
+    casella.append(i);
     // manca un testo con il nome dell'icona
-    casella.innerHTML = `${element.family} ${element.prefix+element.type}`;
+    // casella.innerHTML = `${element.family} ${element.prefix+element.type}`;
     main.append(casella);
     console.log(casella);
 })
