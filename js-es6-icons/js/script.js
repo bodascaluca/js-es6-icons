@@ -128,49 +128,42 @@ const list =
 	}
 ];
 
+const alls = list.filter((element)=> element.type === "animal" && element.type === "vegetable" && element.type === "user") ;
+const animals = list.filter((element)=> element.type === "animal");
+const vegetables = list.filter((element)=> element.type === "vegetable");
+const users = list.filter((element)=> element.type === "user");
 
-
-
-
-// if (selectIcons === 1){
-//     const none = document.querySelector("main");
-//     none.classList.add("none");
-// }
-
-
-
-const selectIcon = list.filter((element)=>{
-    let info;
-    if (element.type === "animal" && element.type === "vegetable" && element.type === "user"){
-        info = 1;
-    } else if ( element.type === "animal"){
-        info = 2;
-    } else if (element.type === "vegetable"){
-        info = 3;
-    } else if (element.type === "user"){
-        info = 4;
-    }
-    return info;
-})
-
-const selectIcons = parseInt(document.getElementById("different-icon").value);
-
-if (selectIcons === selectIcon){
-    console.log()
-}
 
 const main = document.querySelector(".main");
-list.forEach((element) => {
-    const casella = document.createElement("div");
-    casella.classList.add("box");
+create(list);
+function create(list) {
+    list.forEach((element) => {
+        const casella = document.createElement("div");
+        casella.classList.add("box");
 
-    const i = document.createElement("i");
-    i.classList.add(element.color, element.family, element.prefix+element.name);
-    casella.append(i);
+        const i = document.createElement("i");
+        i.classList.add(element.color, element.family, element.prefix+element.name);
+        casella.append(i);
 
-    const miniTitle = document.createElement("h3");
-    miniTitle.innerHTML = `${element.name.toUpperCase()}`;
-    casella.append(miniTitle);
-    main.append(casella);
-    console.log(casella);
-})
+        const miniTitle = document.createElement("h3");
+        miniTitle.innerHTML = `${element.name.toUpperCase()}`;
+        casella.append(miniTitle);
+        main.append(casella);
+        console.log(casella);
+    });
+}
+
+document.querySelector('#different-icon').addEventListener('change', function() {
+    // console.log(this.value);
+    main.innerHTML = '';
+    if (this.value == `animal` && this.value == `vegetable` && this.value == `user` ){
+        create(alls);
+    }else if (this.value == 'animal') {
+        create(animals);
+    } else if (this.value == `vegetable`){
+        create(vegetables);
+    } else if (this.value == `user`){
+        create(users);
+    }
+
+});
