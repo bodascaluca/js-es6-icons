@@ -50,6 +50,10 @@ header{
     
 }
 
+.none{
+    display:none;
+}
+
 .box{
     width: calc(100% / 5 - 3px);
     height: calc(100% / 4 - 3px);

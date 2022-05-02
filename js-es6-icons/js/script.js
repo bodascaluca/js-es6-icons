@@ -130,6 +130,35 @@ const list =
 
 
 
+
+
+// if (selectIcons === 1){
+//     const none = document.querySelector("main");
+//     none.classList.add("none");
+// }
+
+
+
+const selectIcon = list.filter((element)=>{
+    let info;
+    if (element.type === "animal" && element.type === "vegetable" && element.type === "user"){
+        info = 1;
+    } else if ( element.type === "animal"){
+        info = 2;
+    } else if (element.type === "vegetable"){
+        info = 3;
+    } else if (element.type === "user"){
+        info = 4;
+    }
+    return info;
+})
+
+const selectIcons = parseInt(document.getElementById("different-icon").value);
+
+if (selectIcons === selectIcon){
+    console.log()
+}
+
 const main = document.querySelector(".main");
 list.forEach((element) => {
     const casella = document.createElement("div");
@@ -142,8 +171,6 @@ list.forEach((element) => {
     const miniTitle = document.createElement("h3");
     miniTitle.innerHTML = `${element.name.toUpperCase()}`;
     casella.append(miniTitle);
-    // manca un testo con il nome dell'icona
-    // casella.innerHTML = `${element.family} ${element.prefix+element.type}`;
     main.append(casella);
     console.log(casella);
 })
