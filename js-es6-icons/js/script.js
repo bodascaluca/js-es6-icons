@@ -12,7 +12,7 @@
 // Inizialmente può essere sufficiente stampare dei semplici div, senza alcuno stile, con all'interno l'icona e uno span con il nome. Solamente quando la parte logica è completa, ci dedichiamo al css.
 // Buon lavoro ragazzi! :tada:
 
-
+const list =
 [
 	{
 		name: 'cat',
@@ -127,3 +127,23 @@
 		color: 'blue'
 	}
 ];
+
+
+const text = list.map((element)=>{
+    let message;
+    message.innerHTML +=`${element.family} ${element.prefix} ${element.type}`;
+    return message;
+});
+
+
+const main = document.querySelector(".main");
+
+const casella = document.createElement("div");
+casella.classList.add("box");
+casella.innerHtml= `${text}`;
+main.append(casella);
+console.log(casella);
+
+
+
+
