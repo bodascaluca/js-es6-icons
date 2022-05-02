@@ -129,21 +129,22 @@ const list =
 ];
 
 
+
+/*
 const text = list.map((element)=>{
     let message;
     message.innerHTML +=`${element.family} ${element.prefix} ${element.type}`;
     return message;
 });
-
+*/
 
 const main = document.querySelector(".main");
-
-const casella = document.createElement("div");
-casella.classList.add("box");
-casella.innerHtml= `${text}`;
-main.append(casella);
-console.log(casella);
-
-
-
-
+list.forEach((element) => {
+    const casella = document.createElement("div");
+    casella.classList.add("box");
+    // manca i con le classi dell'icona
+    // manca un testo con il nome dell'icona
+    casella.innerHTML = `${element.family} ${element.prefix+element.type}`;
+    main.append(casella);
+    console.log(casella);
+})
