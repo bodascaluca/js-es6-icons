@@ -59,4 +59,21 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
+}
+
+i{
+    font-size:2rem;
+}
+
+.blue{
+    color:blue;
+}
+
+.green{
+    color:green;
+}
+
+.orange{
+    color:orange;
 }

@@ -134,10 +134,14 @@ const main = document.querySelector(".main");
 list.forEach((element) => {
     const casella = document.createElement("div");
     casella.classList.add("box");
-    // manca i con le classi dell'icona
+
     const i = document.createElement("i");
-    i.classList.add(element.family, element.prefix+element.name);
+    i.classList.add(element.color, element.family, element.prefix+element.name);
     casella.append(i);
+
+    const miniTitle = document.createElement("h3");
+    miniTitle.innerHTML = `${element.name.toUpperCase()}`;
+    casella.append(miniTitle);
     // manca un testo con il nome dell'icona
     // casella.innerHTML = `${element.family} ${element.prefix+element.type}`;
     main.append(casella);
